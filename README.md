@@ -14,11 +14,11 @@ Please upgrade your go version to v1.11+ so that you can use go module. You have
 
 Executes the following commands right under the root directory of this repository:
 ```sh
-    $ go build -o marvin-exporter cmd/marvin/main.go
+    $ go build -o marvin-exporter cmd/openfaas/main.go
 ```
 or
 ```sh
-    $ go build -o marvin-exporter github.com/pnetwork/sre.monitor.metrics/cmd/marvin
+    $ go build -o marvin-exporter github.com/pnetwork/nats.exporter.metrics/cmd/openfaas
 ```
 
 This both generate the executable binary
@@ -29,20 +29,19 @@ This both generate the executable binary
 To build an image, use Dockerfile at the directory:
 
 ```sh
-    $ docker build -f build/package/marvin/Dockerfile -t {your_image_path_with_tags} .
+    $ docker build -f build/package/openfaas/Dockerfile -t {your_image_path_with_tags} .
 ```
 
 ## Run via Docker
 
 You can run like this:
 ```sh
-    $ docker run -idt --name marvin-exporter -p 9987:9987 dockerhub.pentium.network/pnrick/marvin-exporter
+    $ docker run -idt --name marvin-exporter -p 9987:9987 siangyeh8818/nats-exporter
 ```
 
 
 ## Skaffold
 
-This builds and deploy the image to [cr-dev.pentium.network/marvin-exporter] and [cr-dev.pentium.network/faas-exporter]:
 ```sh
     $ skaffold build --quiet > build.out
 ```
@@ -54,6 +53,4 @@ This builds and deploy the image to [cr-dev.pentium.network/marvin-exporter] and
 ## Contact
 
 Any questions and feedbacks are so welcome.
-* siangye@pentium.network
-* rick.lin@pentium.network
-# nats.exporter.metrics
+* siangyeh8818@gmail.com
