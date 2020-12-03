@@ -1,5 +1,6 @@
-# sre.monitor.metrics
+# Nats-exporter
 Export Marvin related information in the prometheus format.
+自開發的exporter , 監控nats用的
 
 ## Go 1.11 Modules
 
